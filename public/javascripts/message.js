@@ -1,3 +1,25 @@
+window.onload = function() {
+    let xhrForKey = new XMLHttpRequest();
+    xhrForKey.open("POST", "/get_key", true);
+    let body = "chatUser=" + encodeURIComponent(getCookie("chatUser"));
+    xhrForKey.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhrForKey.responseType = "json";
+    xhrForKey.onload = function () {
+        key = xhrForKey.response.key;
+        if(key==null){
+            let xhrSetKey = new XMLHttpRequest();
+            key = randomInteger(1,100);
+            xhrSetKey.open("POST", "/set_key", true);
+            let body_key = "cookie=" + encodeURIComponent(getCookie("chatUser")) + "&key=" + encodeURIComponent(key);
+            xhrSetKey.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            // xhrSetKey.responseType = "json";
+            xhrSetKey.send(body_key)
+        }
+    }
+    xhrForKey.send(body)
+}
+var key;
+
 document.querySelector(".message_area input").addEventListener("click",sendMessage);
 document.querySelector(".message_area input[value=\"Выход\"").addEventListener("click",exit);
 let login = document.querySelector(".userName").textContent;
@@ -17,22 +39,23 @@ socket.on('userDisconnectMess',data=>{
 function sendMessage() {
     if(document.querySelector(".message_area form textarea").value !=="" && document.querySelector(".message_area form textarea").value !== undefined){
         try {
-            let xhrForKey = new XMLHttpRequest();
-            xhrForKey.open("POST","/get_key",true);
-            let body = "chatUser="+ encodeURIComponent(getCookie("chatUser"));
-            xhrForKey.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhrForKey.responseType = "json";
-            xhrForKey.onreadystatechange = function(){
-                if(xhrForKey.readyState === XMLHttpRequest.DONE && xhrForKey.status === 200) {
-                    let key = xhrForKey.response.key;
-                    let message = document.querySelector(".message_area textarea").value;
-                    addCurrentUserMessage(message,login);
-                    message = cesarCode(message,key);
-                    socket.emit('message',message,key,login);
-                };
+            let message = document.querySelector(".message_area textarea").value;
+            addCurrentUserMessage(message,login);
+            message = cesarCode(message,key);
+            addCodeMessage(key,login);
+            addCodeMessage(message,login);
+                let xht = new XMLHttpRequest();
+                xht.open("POST","/new_message",true);
+                let body = "message=" + encodeURIComponent(message) + "&key=" +encodeURIComponent(key);
+                xht.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xht.responseType = "json";
+                xht.onload = function(){
+                    addServerMessage(xht.response.message);
+                    addServerMessage(xht.response.codeMes);
+                }
+                xht.send(body);
 
-            }
-            xhrForKey.send(body)
+            socket.emit('message',message,key,login);
         }
         catch (e) {
             addErrorMessage(e.message);
@@ -70,6 +93,11 @@ function exit() {
     socket.emit('userDisconnect',{login:login});
 }
 
+function randomInteger(min, max) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+}
 
 
 

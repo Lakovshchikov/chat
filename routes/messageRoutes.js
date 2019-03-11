@@ -11,37 +11,36 @@ function setParams(_db,_io) {
 
 
 function getKey(req,res) {
-    db.query("SELECT * FROM keys WHERE cookie = $1",[req.body.chatUser])
+    let query = `SELECT * FROM keys WHERE cookie = '${req.body.chatUser}'`;
+    db.query(query)
         .then(data => {
             res.send({ key: data[0].key })
         });
 }
 
+function setKey(req) {
+    let query = `UPDATE keys SET key = (${req.body.key}) WHERE cookie = '${req.body.cookie}'`;
+    db.query(query);
+}
+
 function newMessage(req,res) {
-    db.query("SELECT * FROM keys WHERE cookie = $1",[req.body.chatUser])
-        .then(data =>{
-            let decodeMes = decodeMessage(req.body.code_message,data[0].key);
-            res.send({ decodeM: decodeMes,codeM:req.body.code_message });
-        })
+    let code_mess = req.body.message;
+    let mess = decodeMessage(code_mess,req.body.key);
+    res.send({ message: mess,codeMes:code_mess});
 }
 
-
-
-
-
-function randomInteger(min, max) {
-    let rand = min - 0.5 + Math.random() * (max - min + 1)
-    rand = Math.round(rand);
-    return rand;
-}
 
 function decodeMessage(message,key){
+    let a = 0;
+    let keys = "";
     const offset = key;
     let out = '';
     for (let i=0; i< message.length; i++){
+        keys = keys + a;
         let code = message.charCodeAt(i);
-        code = code - offset;
+        code = code - offset - a;
         out += String.fromCharCode(code);
+        a++;
     }
     return out;
 }
@@ -49,6 +48,7 @@ function decodeMessage(message,key){
 module.exports = {
     newMessage:newMessage,
     setParams:setParams,
-    getKey:getKey
+    getKey:getKey,
+    setKey:setKey
 
 }

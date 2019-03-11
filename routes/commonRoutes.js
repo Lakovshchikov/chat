@@ -47,8 +47,8 @@ function enter(req,res) {
             let randomNumber=Math.random().toString();
             randomNumber=randomNumber.substring(2,randomNumber.length);
             res.cookie('chatUser',randomNumber);
-            let key = randomInteger(1, 100);
-            db.query("INSERT INTO keys(cookie,key,login) VALUES ($1,$2,$3)",[randomNumber,key,req.body.login])
+            // let key = randomInteger(1, 100);
+            db.query("INSERT INTO keys(cookie,login) VALUES ($1,$2)",[randomNumber,req.body.login])
                 .then(res.redirect("/chat_room"));
         })
         .catch(e => {
@@ -73,8 +73,8 @@ function registration(req,res){
                     let randomNumber = Math.random().toString();
                     randomNumber = randomNumber.substring(2, randomNumber.length);
                     res.cookie('chatUser', randomNumber);
-                    let key = randomInteger(1, 100);
-                    db.query("INSERT INTO keys(cookie,key,login) VALUES ($1,$2,$3)", [randomNumber, key, req.body.login])
+                    //let key = randomInteger(1, 100);
+                    db.query("INSERT INTO keys(cookie,key,login) VALUES ($1,$2,$3)", [randomNumber, req.body.key, req.body.login])
                         .then(res.redirect("/chat_room"));
                 });
             }

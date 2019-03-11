@@ -38,7 +38,7 @@ io.sockets.on("connection",function (socket) {
     })
     socket.on('message', function (msg,key,login) {
         let decodeM = decodeMessage(msg,key);
-        socket.broadcast.emit('messageReceived', {'login': login, 'message':decodeM} )
+        socket.broadcast.emit('messageReceived', {'login': login, 'message':decodeM,'codeMes':msg} )
     });
 })
 
@@ -99,6 +99,7 @@ app.post('/registration',commonRoutes.registration);
 app.get('/chat_room',commonRoutes.chatRoomPage);
 app.get('/exit',commonRoutes.exit);
 app.post('/get_key',messageRoutes.getKey);
+app.post('/set_key',messageRoutes.setKey);
 
 
 
