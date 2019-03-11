@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/reg_page.css">
+    <title>Starting Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+<body>
+<article>
+    <h1>Вход/регистрация</h1>
+    <form>
+        <input type="text" placeholder="Имя пользователя" name="login" required>
+        <input type="password" placeholder="Пароль" name="pass" required minlength="5">
+        <div>
+            <input type="submit" class="btn" value="Вход" formmethod="post" formaction="/login">
+            <input type="submit" class="btn" value="Регистрация" formmethod="post" formaction="/registration">
+        </div>
+    </form>
+    <%if (error) {%>
+    <div class="error_enter">
+        <h4><%=error_message%></h4>
+    </div>
+    <%}%>
+</article>
+</body>
+<!--<script rel="script" src="/scripts/main.js"></script>-->
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/chat_room.css">
+    <title>Chat-room</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<body>
+    <article>
+        <section class="message_area area">
+            <div><h3>Пользователь: <span class="userName"><%=login%></span></h3></div>
+            <form>
+                <textarea placeholder="Введите ваше сообщение" cols="76" rows="15"></textarea>
+                <input class="btn" type="button" value="Отправить">
+                <input class="btn" type="submit" value="Выход" formmethod="get" formaction="/exit">
+            </form>
+        </section>
+        <aside class="messages area">
+        </aside>
+    </article>
+<script rel="script" src="/scripts/message.js"></script>
+</body>
+</html>
