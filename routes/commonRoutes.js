@@ -2,6 +2,7 @@ let db,crypto;
 let secret    = 'secret';
 let algorithm = 'sha256';   //consider using sha256
 let hash, hmac;
+const rsaWrapper = require("../rsa_crypto");
 
 function setParams(_db,_crypto) {
     db = _db;
@@ -39,7 +40,10 @@ function mainPage(req,res) {
 
 function enter(req,res) {
     hmac = crypto.createHmac(algorithm,secret);
-    hmac.write(req.body.pass);
+    console.log(`Зашифрованный пароль, пришедший с клиента: \n ${req.body.pass}`);
+    let decrypted_pass = rsaWrapper.decrypt(rsaWrapper.serverPrivate,req.body.pass);
+    console.log(`Декодированный пароль: ${decrypted_pass}`);
+    hmac.write(decrypted_pass);
     hmac.end();
     hash = hmac.read().toString('hex');
     db.one("SELECT * FROM users WHERE login = $1 and pass = $2",[req.body.login,hash])
@@ -47,8 +51,9 @@ function enter(req,res) {
             let randomNumber=Math.random().toString();
             randomNumber=randomNumber.substring(2,randomNumber.length);
             res.cookie('chatUser',randomNumber);
-            // let key = randomInteger(1, 100);
             db.query("INSERT INTO keys(cookie,login) VALUES ($1,$2)",[randomNumber,req.body.login])
+                //Генерация ключей для клиента
+                //.then(rsaWrapper.generateClientKeys())
                 .then(res.redirect("/chat_room"));
         })
         .catch(e => {
@@ -59,7 +64,13 @@ function enter(req,res) {
 
 function registration(req,res){
     hmac = crypto.createHmac(algorithm,secret);
-    hmac.write(req.body.pass);
+    //for rsa pass encrypted
+    console.log(`Зашифрованный пароль, пришедший с клиента: \n ${req.body.pass}`);
+    let decrypted_pass = rsaWrapper.decrypt(rsaWrapper.serverPrivate,req.body.pass);
+    console.log(`Декодированный пароль: ${decrypted_pass}`);
+    //
+    //hmac.write(req.body.pass);
+    hmac.write(decrypted_pass);
     hmac.end();
     hash = hmac.read().toString('hex');
     db.one("SELECT * FROM users WHERE login = $1 and pass = $2",[req.body.login,hash])
@@ -92,15 +103,11 @@ function chatRoomPage (req, res){
     else{
         db.one("SELECT * FROM keys WHERE cookie = $1",[cookie])
             .then(user=>{
+                //Отображение ключей на странице
+                // let keys = rsaWrapper.getKeys(__dirname);
                 res.render("chat_room.ejs",{login:user.login});
             })
     }
-}
-
-function randomInteger(min, max) {
-    let rand = min - 0.5 + Math.random() * (max - min + 1)
-    rand = Math.round(rand);
-    return rand;
 }
 
 function exit(req,res){
@@ -112,6 +119,11 @@ function exit(req,res){
             )
 }
 
+function getPublicKey(req,res){
+    let keys = rsaWrapper.getKeys(__dirname);
+    res.send({key:keys.server_public_key});
+}
+
 
 
 module.exports = {
@@ -120,5 +132,6 @@ module.exports = {
     mainPage:mainPage,
     registration:registration,
     chatRoomPage:chatRoomPage,
-    exit:exit
+    exit:exit,
+    getPublicKey:getPublicKey
 }

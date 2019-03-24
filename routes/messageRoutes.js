@@ -1,10 +1,13 @@
 let db,
-    io;
+    io,
+    rsaWrapper;
 
 
-function setParams(_db,_io) {
+function setParams(_db,_io,_rsaWrapper) {
     db=_db;
     io=_io;
+    rsaWrapper=_rsaWrapper;
+
 }
 
 
@@ -25,8 +28,9 @@ function setKey(req) {
 
 function newMessage(req,res) {
     let code_mess = req.body.message;
-    let mess = decodeMessage(code_mess,req.body.key);
-    res.send({ message: mess,codeMes:code_mess});
+    let decrypted_key = rsaWrapper.decrypt(rsaWrapper.serverPrivate,req.body.key);
+    let decodeM = decodeMessage(code_mess,decrypted_key);
+    res.send({ message: req.body.message,codeMes:decodeM});
 }
 
 

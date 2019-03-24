@@ -24,7 +24,7 @@ article input{
     height: 2rem;
 }
 
-input:not([type="submit"]){
+input:not([type="button"]){
     border-radius: 0.5rem;
     background-color: aliceblue;
     transition: 0.5s;

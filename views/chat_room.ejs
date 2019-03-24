@@ -11,15 +11,34 @@
         <section class="message_area area">
             <div><h3>Пользователь: <span class="userName"><%=login%></span></h3></div>
             <form>
-
                 <textarea placeholder="Введите ваше сообщение" cols="76" rows="15"></textarea>
                 <input class="btn" type="button" value="Отправить">
                 <input class="btn" type="submit" value="Выход" formmethod="get" formaction="/exit">
             </form>
+            <!--<article>-->
+                <!--<div class="keys_container">-->
+                    <!--<h4>Server public key</h4>-->
+                    <!--<textarea readonly id="server_public_key"></textarea>-->
+                <!--</div>-->
+                <!--<hr>-->
+                <!--<div class="keys_container">-->
+                    <!--<h4>Client public key</h4>-->
+                    <!--<textarea readonly id="client_public_key"></textarea>-->
+                <!--</div>-->
+                <!--<hr>-->
+                <!--<div class="keys_container">-->
+                    <!--<h4>Client private key</h4>-->
+                    <!--<textarea readonly id="client_private_key"></textarea>-->
+                <!--</div>-->
+            <!--</article>-->
         </section>
         <aside class="messages area">
         </aside>
     </article>
-<script rel="script" src="/scripts/message.js"></script>
 </body>
+<script rel="script" src="/scripts/rsa-wrapper.js"></script>
+<script rel="script" src="/scripts/encoding.js"></script>
+<script rel="script" src="/scripts/encoding-indexes.js"></script>
+<script rel="script" src="/scripts/converter-wrapper.js"></script>
+<script rel="script" src="/scripts/message.js"></script>
 </html>

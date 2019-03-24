@@ -1,4 +1,9 @@
+let key;
+let encrypted_key;
+let server_public_key;
+//формирование ключа для шифрования сообщения
 window.onload = function() {
+    //отправка запроса на получени ключа
     let xhrForKey = new XMLHttpRequest();
     xhrForKey.open("POST", "/get_key", true);
     let body = "chatUser=" + encodeURIComponent(getCookie("chatUser"));
@@ -6,23 +11,43 @@ window.onload = function() {
     xhrForKey.responseType = "json";
     xhrForKey.onload = function () {
         key = xhrForKey.response.key;
+        //если ключ вернулся пустым - формируется новый и сохраняется в БД
         if(key==null){
             let xhrSetKey = new XMLHttpRequest();
             key = randomInteger(1,100);
             xhrSetKey.open("POST", "/set_key", true);
             let body_key = "cookie=" + encodeURIComponent(getCookie("chatUser")) + "&key=" + encodeURIComponent(key);
             xhrSetKey.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            // xhrSetKey.responseType = "json";
-            xhrSetKey.send(body_key)
+            xhrSetKey.send(body_key);
+            //получение публичного ключа сервера, и шифрование ключа для сообщения
+            getServerPubKey();
+        }
+        else{
+            getServerPubKey();
         }
     }
     xhrForKey.send(body)
 }
-var key;
+
+function getServerPubKey() {
+    let xhrGetPubKey = new XMLHttpRequest();
+    xhrGetPubKey.open("GET","get_public_key",true);
+    xhrGetPubKey.responseType = "json";
+    xhrGetPubKey.onload= function () {
+        console.log(`Публичный ключ сервера: ${xhrGetPubKey.response.key}`);
+        server_public_key = xhrGetPubKey.response.key;
+        rsaWrapper.publicEncrypt(server_public_key,key)
+            .then(k=>{
+                encrypted_key=k;
+            })
+    }
+    xhrGetPubKey.send();
+}
 
 document.querySelector(".message_area input").addEventListener("click",sendMessage);
 document.querySelector(".message_area input[value=\"Выход\"").addEventListener("click",exit);
 let login = document.querySelector(".userName").textContent;
+
 var socket = io();
 socket.emit("userConnected",{login:login});
 socket.on('messageReceived', (data) => {
@@ -35,18 +60,41 @@ socket.on('userDisconnectMess',data=>{
     addServerMessage((`Пользователь ${data.login} вышел из чата`));
 })
 
+//Для нескольких клиентов, но не работает
+// socket.on('server_encrypted_mes',data=>{
+//     addUserMessage(data.encrypted_message,data.login);
+//     rsaWrapper.privateDecrypt(document.getElementById("client_private_key").value,data.encrypted_message).then( message => {
+//         console.log(message);
+//         console.log(typeof message);
+//
+//         addUserMessage(message,data.login);
+//     });
+//
+// })
+// socket.on("getPubKeys",(data)=>{
+//     socket.emit("keys",rsaWrapper.getPublicKeyArrayBuffer(document.getElementById("client_public_key").value));
+// })
+
 
 function sendMessage() {
     if(document.querySelector(".message_area form textarea").value !=="" && document.querySelector(".message_area form textarea").value !== undefined){
         try {
             let message = document.querySelector(".message_area textarea").value;
             addCurrentUserMessage(message,login);
+            //Для нескольких клиентов, но не работает
+            // rsaWrapper.publicEncrypt(document.getElementById("server_public_key").value,message)
+            //     .then((msg)=>{
+            //         addCodeMessage(msg,"current");
+            //         socket.emit("rsa_encrypted_mes",msg);
+            //     })
+                // .then(socket.emit("rsa_encrypted_mes",{encrypted_message:message.toString("base64"),login:"current"}));
             message = cesarCode(message,key);
             addCodeMessage(key,login);
             addCodeMessage(message,login);
+            //Для отображения того, что приходит на сервер, но надо поправить из-за шифрования(ключа)
                 let xht = new XMLHttpRequest();
                 xht.open("POST","/new_message",true);
-                let body = "message=" + encodeURIComponent(message) + "&key=" +encodeURIComponent(key);
+                let body = "message=" + encodeURIComponent(message) + "&key=" +encodeURIComponent(encrypted_key);
                 xht.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                 xht.responseType = "json";
                 xht.onload = function(){
@@ -54,8 +102,7 @@ function sendMessage() {
                     addServerMessage(xht.response.codeMes);
                 }
                 xht.send(body);
-
-            socket.emit('message',message,key,login);
+            socket.emit('message',message,encrypted_key,login);
         }
         catch (e) {
             addErrorMessage(e.message);
@@ -78,7 +125,6 @@ function cesarCode(text,key) {
         out += String.fromCharCode(code);
         a++;
     }
-    console.log(keys);
     return out;
 }
 
@@ -98,6 +144,8 @@ function randomInteger(min, max) {
     rand = Math.round(rand);
     return rand;
 }
+
+
 
 
 
