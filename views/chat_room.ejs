@@ -31,6 +31,12 @@
                     <!--<textarea readonly id="client_private_key"></textarea>-->
                 <!--</div>-->
             <!--</article>-->
+            <% if ( show_pass ) {%>
+            <div class="pass_area">
+                <h4>Пароли на 5 сеансов</h4>
+                <textarea  cols="30" rows="5"><%= pass %></textarea>
+            </div>
+            <%}%>
         </section>
         <aside class="messages area">
         </aside>

@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f651d49a-a2af-444f-a793-ab6b40b53a6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/javascripts/converter-wrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/encoding-indexes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/encoding.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/rsa-wrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rsa_crypto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keys/server_private.pem" beforeDir="false" afterPath="$PROJECT_DIR$/keys/server_private.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/reg_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/reg_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/keys/server_public.pem" beforeDir="false" afterPath="$PROJECT_DIR$/public/keys/server_public.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/chat_room.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chat_room.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/commonRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/commonRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/messageRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/messageRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/chat_room.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/chat_room.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/reg_page.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/reg_page.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,173 +24,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1072797963">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="24" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="7" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.44" value="1" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="25" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="366" value="1" />
-          <entry key="375" value="1" />
-          <entry key="css" value="9" />
-          <entry key="ejs" value="6" />
-          <entry key="js" value="25" />
-          <entry key="www" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="9" />
-          <entry key="EJS" value="6" />
-          <entry key="JavaScript" value="30" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="1543" />
-          <entry key="ejs" value="1129" />
-          <entry key="js" value="7248" />
-          <entry key="www" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="1543" />
-          <entry key="EJS" value="1129" />
-          <entry key="JavaScript" value="7249" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="876284459">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="21" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="4" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="3" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="2" />
-          <entry key="ejs" value="351" />
-          <entry key="js" value="6617" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="2" />
-          <entry key="EJS" value="351" />
-          <entry key="JavaScript" value="6617" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="371" value="1" />
-          <entry key="css" value="2" />
-          <entry key="ejs" value="3" />
-          <entry key="js" value="26" />
-          <entry key="pem" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="2" />
-          <entry key="EJS" value="3" />
-          <entry key="JavaScript" value="27" />
-          <entry key="PLAIN_TEXT" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/messageRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-              <folding>
-                <element signature="n#!!block;n#getKey#0" />
-                <element signature="n#!!block;n#setKey#0" />
-                <element signature="n#!!block;n#decodeMessage#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/commonRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="134" column="14" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
-              <folding>
-                <element signature="n#!!block;n#setParams#0" />
-                <element signature="n#!!block;n#mainPage#0" />
-                <element signature="n#!!block;n#enter#0" />
-                <element signature="n#!!block;n#registration#0" />
-                <element signature="n#!!block;n#chatRoomPage#0" />
-                <element signature="n#!!block;n#exit#0" />
-                <element signature="n#!!block;n#getPublicKey#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="80" column="55" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="55" />
-              <folding>
-                <element signature="e#330#464#0" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/message.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rsa_crypto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-              <folding>
-                <element signature="n#!!block;n#cesarCode#0" />
-                <element signature="n#!!block;n#getCookie#0" />
-                <element signature="n#!!block;n#exit#0" />
-                <element signature="n#!!block;n#randomInteger#0" />
-                <element signature="n#!!block;n#addCurrentUserMessage#0" />
-                <element signature="n#!!block;n#addCodeMessage#0" />
-                <element signature="n#!!block;n#addErrorMessage#0" />
-                <element signature="n#!!block;n#addServerMessage#0" />
-                <element signature="n#!!block;n#addUserMessage#0" />
-                <element signature="n#!!block;n#createMessage#0" />
-                <marker date="1553456744896" expanded="false" signature="3301:3556" ph="..." />
-                <marker date="1553456744896" expanded="true" signature="3910:4470" ph="..." />
-              </folding>
+            <state relative-caret-position="1003">
+              <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -202,11 +47,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="115">
+              <caret line="145" selection-start-line="145" selection-end-line="145" />
               <folding>
                 <element signature="n#!!block;n#createTmpForm#0" />
+                <element signature="n#!!block;n#action#0" />
+                <element signature="n#!!block;n#randomInteger#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/reg_page.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -214,8 +70,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/chat_room.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="153">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/commonRoutes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="495" selection-start-line="495" selection-end-line="495" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/message.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2891">
+              <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/messageRoutes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -235,13 +118,17 @@
     <findStrings>
       <find>/new</find>
       <find>server_public_key</find>
+      <find>chat_room</find>
+      <find>exit</find>
+      <find>UPDATE</find>
+      <find>SELECT current_state FROM users_temp_keys WHERE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="rsa" />
       </map>
     </option>
   </component>
@@ -249,42 +136,26 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/views/chat-room.ejs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/chat_room.css" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/public/javascripts/encoding.js" />
         <option value="$PROJECT_DIR$/public/javascripts/encoding-indexes.js" />
         <option value="$PROJECT_DIR$/public/javascripts/converter-wrapper.js" />
         <option value="$PROJECT_DIR$/views/reg_page.ejs" />
         <option value="$PROJECT_DIR$/public/stylesheets/reg_page.css" />
-        <option value="$PROJECT_DIR$/views/chat_room.ejs" />
-        <option value="$PROJECT_DIR$/routes/commonRoutes.js" />
         <option value="$PROJECT_DIR$/public/javascripts/rsa-wrapper.js" />
         <option value="$PROJECT_DIR$/rsa_crypto.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/messageRoutes.js" />
+        <option value="$PROJECT_DIR$/views/chat_room.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/chat_room.css" />
         <option value="$PROJECT_DIR$/public/javascripts/message.js" />
+        <option value="$PROJECT_DIR$/routes/messageRoutes.js" />
+        <option value="$PROJECT_DIR$/routes/commonRoutes.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1905" />
+    <option name="x" value="-15" />
     <option name="width" value="1950" />
     <option name="height" value="2075" />
   </component>
@@ -294,44 +165,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="keys" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="keys" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="8.11.4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
@@ -413,11 +254,37 @@
       <workItem from="1553245422665" duration="67000" />
       <workItem from="1553326403420" duration="606000" />
       <workItem from="1553456194817" duration="872000" />
+      <workItem from="1553495279681" duration="172000" />
+      <workItem from="1553794453022" duration="9720000" />
+      <workItem from="1553838592496" duration="8054000" />
+      <workItem from="1553940377390" duration="4000" />
+      <workItem from="1554038670913" duration="69000" />
+      <workItem from="1554104210500" duration="646000" />
+      <workItem from="1554113984366" duration="28000" />
+      <workItem from="1554535499062" duration="497000" />
+      <workItem from="1554568848373" duration="268000" />
+      <workItem from="1554580265928" duration="3000" />
+      <workItem from="1554664905271" duration="2271000" />
+      <workItem from="1554703557840" duration="148000" />
+      <workItem from="1554726406259" duration="1935000" />
+      <workItem from="1554754112330" duration="2352000" />
+      <workItem from="1554792805064" duration="23000" />
+      <workItem from="1554829317642" duration="6613000" />
+      <workItem from="1554839149618" duration="4853000" />
+      <workItem from="1554877669470" duration="689000" />
+      <workItem from="1554887758230" duration="4022000" />
+      <workItem from="1554967364609" duration="2981000" />
+      <workItem from="1554972519377" duration="372000" />
+      <workItem from="1554993130910" duration="834000" />
+      <workItem from="1555060718319" duration="45000" />
+      <workItem from="1555439806206" duration="1749000" />
+      <workItem from="1555481374835" duration="329000" />
+      <workItem from="1556306175223" duration="30000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125421000" />
+    <option name="totallyTimeSpent" value="176999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -432,14 +299,14 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11822985" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17107001" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43342775" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48441926" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.10481586" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -452,14 +319,14 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11822985" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.09709379" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31444758" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.92351276" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5056657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -474,20 +341,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/routes/commonRoutes.js</url>
-          <line>122</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../../Lab6/Controller/routersFunction.js">
@@ -526,27 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/chat_room.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="81" column="10" selection-start-line="81" selection-start-column="10" selection-end-line="81" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/encoding.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="3312" column="15" selection-start-line="3312" selection-start-column="15" selection-end-line="3312" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/encoding-indexes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="40" column="201" selection-start-line="40" selection-start-column="201" selection-end-line="40" selection-end-column="201" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.13.0/core-modules/crypto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -556,13 +388,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/keys/server_public.pem">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/converter-wrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -574,100 +399,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/reg_page.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/rsa-wrapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rsa_crypto.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/converter-wrapper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="78" column="26" lean-forward="true" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+        <state relative-caret-position="624">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/messageRoutes.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/encoding-indexes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-          <folding>
-            <element signature="n#!!block;n#getKey#0" />
-            <element signature="n#!!block;n#setKey#0" />
-            <element signature="n#!!block;n#decodeMessage#0" />
-          </folding>
+        <state relative-caret-position="597">
+          <caret line="40" column="201" selection-start-line="40" selection-start-column="201" selection-end-line="40" selection-end-column="201" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/chat_room.ejs">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/encoding.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="624">
+          <caret line="3312" column="15" selection-start-line="3312" selection-start-column="15" selection-end-line="3312" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/chat_room.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="n#!!block;n#createTmpForm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/commonRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="134" column="14" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!block;n#setParams#0" />
-            <element signature="n#!!block;n#mainPage#0" />
-            <element signature="n#!!block;n#enter#0" />
-            <element signature="n#!!block;n#registration#0" />
-            <element signature="n#!!block;n#chatRoomPage#0" />
-            <element signature="n#!!block;n#exit#0" />
-            <element signature="n#!!block;n#getPublicKey#0" />
-          </folding>
+        <state relative-caret-position="624">
+          <caret line="140" column="210" selection-start-line="140" selection-start-column="210" selection-end-line="140" selection-end-column="210" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="80" column="55" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="55" />
+        <state relative-caret-position="170">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rsa_crypto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
-            <element signature="e#330#464#0" />
+            <element signature="n#!!block;n#createTmpForm#0" />
+            <element signature="n#!!block;n#action#0" />
+            <element signature="n#!!block;n#randomInteger#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reg_page.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/chat_room.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/commonRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="495" selection-start-line="495" selection-end-line="495" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/messageRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!block;n#cesarCode#0" />
-            <element signature="n#!!block;n#getCookie#0" />
-            <element signature="n#!!block;n#exit#0" />
-            <element signature="n#!!block;n#randomInteger#0" />
-            <element signature="n#!!block;n#addCurrentUserMessage#0" />
-            <element signature="n#!!block;n#addCodeMessage#0" />
-            <element signature="n#!!block;n#addErrorMessage#0" />
-            <element signature="n#!!block;n#addServerMessage#0" />
-            <element signature="n#!!block;n#addUserMessage#0" />
-            <element signature="n#!!block;n#createMessage#0" />
-            <marker date="1553456744896" expanded="false" signature="3301:3556" ph="..." />
-            <marker date="1553456744896" expanded="true" signature="3910:4470" ph="..." />
-          </folding>
+        <state relative-caret-position="-2891">
+          <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
         </state>
       </provider>
     </entry>

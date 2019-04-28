@@ -1,3 +1,4 @@
+//Подключание необходимых модулей
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,10 +8,12 @@ var crypto = require("crypto");
 var pgp = require("pg-promise")({});
 var fs = require("fs")
 var rsa = require("node-rsa");
+var commonRoutes = require("./routes/commonRoutes");
+var messageRoutes = require("./routes/messageRoutes");
+var rsaWrapper = require("./rsa_crypto");
 
 
-
-
+//Настройка БД
 const databaseConfig= {
     host: "localhost",
     port: 5432,
@@ -21,12 +24,7 @@ const databaseConfig= {
 
 var pg = pgp(databaseConfig);
 
-var commonRoutes = require("./routes/commonRoutes");
-var messageRoutes = require("./routes/messageRoutes");
-var rsaWrapper = require("./rsa_crypto");
-
-
-
+//Настройка сервера
 var app = express();
 var server = app.listen(3000);
 var io = require('socket.io').listen(server);
@@ -41,7 +39,7 @@ rsaWrapper.generateKeys("server");
 rsaWrapper.initLoadServerKeys(__dirname);
 
 // var msg;
-
+//Работа с сокетами
 io.sockets.on("connection",function (socket) {
     // socket.on("rsa_encrypted_mes",function (encrypted_message) {
     //     console.log("Зашифрованное сообщение, пришедшее на сервер с клиента:");
@@ -73,20 +71,25 @@ io.sockets.on("connection",function (socket) {
         socket.broadcast.emit('userDisconnectMess',{login: user.login} )
     })
     //получение сообщения от клиента
-    socket.on('message', function (msg,key,login) {
-        console.log(`Зашифрованный ключ на сервере: \n ${key}`);
-        let decrypted_key = rsaWrapper.decrypt(rsaWrapper.serverPrivate,key);
-        console.log(`Зашифрованное сообщение: \n ${msg}`);
-        console.log(`Декодированный ключ: \n ${decrypted_key}`);
-        let decodeM = decodeMessage(msg,decrypted_key);
-        console.log(`Расшифрованное сообщение: \n ${decodeM}`);
-        //отправка сообщения на клиентов
-        socket.broadcast.emit('messageReceived', {'login': login, 'message':decodeM,'codeMes':msg} )
+    socket.on('message', function (msg,login) {
+        let query = `SELECT * FROM keys WHERE login = '${login}'`;
+        pg.query(query)
+            .then(result => {
+                console.log(`Зашифрованный ключ пользователя из БД: \n ${result[0].key}`);
+                let decrypted_key = rsaWrapper.decrypt(rsaWrapper.serverPrivate,result[0].key);
+                console.log(`Зашифрованное сообщение: \n ${msg}`);
+                console.log(`Декодированный ключ: \n ${decrypted_key}`);
+                let decodeM = decodeMessage(msg,decrypted_key);
+                console.log(`Расшифрованное сообщение: \n ${decodeM}`);
+                //отправка сообщения на клиентов
+                socket.broadcast.emit('messageReceived', {'login': login, 'message':decodeM,'codeMes':msg} )
+            });
+
     });
 })
 
 
-
+//Расшифровка сообщения симметричным ключем
 function decodeMessage(message,key){
     let a = 0;
     let keys = "";
@@ -137,7 +140,7 @@ app.use('/scripts',express.static("public/javascripts"));
 app.use('/keys',express.static("public/keys"));
 
 
-
+//Маршрутизация
 app.get('/', commonRoutes.mainPage);
 app.post('/login',commonRoutes.enter);
 app.post('/new_message',messageRoutes.newMessage);
@@ -146,7 +149,10 @@ app.get('/chat_room',commonRoutes.chatRoomPage);
 app.get('/exit',commonRoutes.exit);
 app.post('/get_key',messageRoutes.getKey);
 app.post('/set_key',messageRoutes.setKey);
-app.get('/get_public_key',commonRoutes.getPublicKey)
+app.get('/get_public_key',commonRoutes.getPublicKey);
+app.post('/get_current_state',commonRoutes.getCurrentStateUser);
+app.post('/setNewPass',commonRoutes.setNewPass);
+app.post('/check_user',commonRoutes.checkUser);
 
 
 // catch 404 and forward to error handler
